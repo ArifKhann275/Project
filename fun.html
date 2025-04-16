@@ -1,0 +1,101 @@
+<!-- HTML File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Counting Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="valo.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"> <b>SkillHub</b></div>
+        <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+        <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Teacher</a>
+            <a href="#">Contacts</a>
+            <a href="#">About</a>
+            <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+        </div>
+    </div>
+    
+    <section class="count">
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <div class="content">
+                <h3 data-target="150">0</h3>
+                <p>courses</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <i class="fas fa-user-graduate"></i>
+            <div class="content">
+                <h3 data-target="1500">0</h3>
+                <p>students</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <i class="fas fa-chalkboard-user"></i>
+            <div class="content">
+                <h3 data-target="80">0</h3>
+                <p>teachers</p>
+            </div>
+        </div>
+    
+        <div class="box">
+            <i class="fas fa-face-smile"></i>
+            <div class="content">
+                <h3 data-target="97">0</h3>
+                <p>satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="wow.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* CSS File: styles.css */
+body { background: #222; color: #fff; font-family: Arial, sans-serif; }
+.count { display: flex; justify-content: center; gap: 20px; padding: 50px; }
+.box { text-align: center; background: #333; padding: 20px; border-radius: 10px; }
+h3 { font-size: 24px; margin: 10px 0; }
+p { font-size: 18px; color: gray; }
+i { font-size: 40px; color: #00ff88; }
+
+/* JavaScript File: script.js */
+const counters = document.querySelectorAll("h3");
+let started = false;
+
+function startCounting() {
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const increment = target / 100;
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        updateCount();
+    });
+}
+
+const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !started) {
+        startCounting();
+        started = true;
+    }
+}, { threshold: 0.5 });
+
+observer.observe(document.querySelector(".count"));

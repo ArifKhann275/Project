@@ -1,0 +1,725 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    
+    position: fixed; /* Makes the navbar stay at the top */
+    top: 0;
+    
+    left: -30px;
+    width: 100%;
+    
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 15px 25px;
+    z-index: 1000;
+    
+}
+
+
+.navbar .logo{
+    
+    color: #00E77F;
+    margin-left: 20px;
+    margin-top: 6px;
+
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    
+}
+.navbar a:hover,
+.navbar a.active{
+    color: aqua;
+    border-bottom: 3px solid var(#1b17e0);
+    border-color: #1b17e0;
+}
+
+
+.menu {
+    display: flex;
+    font-weight: bold;
+    
+}
+
+.menu a {
+    display: block;
+}
+.navbar  a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+
+}
+.menu a:hover::after{
+    transform: scaleX(1);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+.home{
+    margin-top: 6rem;
+}
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.home .row .content{
+    flex: 1 1 40rem;
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.toggle-btn{
+
+    
+    background-color: #2c2f30;
+    top: 22px;
+    height: 34px;
+   
+    right: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.home .row .image{
+    flex: 1 1 40rem;
+
+}
+.home .row .image img{
+    width: 80%;
+
+}
+.img1 img{
+    margin-left: 500px;
+    width: 140px;
+    height: 100px;
+}
+.home .row .content h3{
+    margin-bottom: 1rem;
+    font-size: 5rem;
+    
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    
+    height: 380px;
+    color: white;
+    box-shadow: 0 0 25px #00E77F;
+  }
+
+  .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modal-content input[type="email"],
+  .modal-content input[type="text"],
+  .modal-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    border: none;
+    border-radius: 8px;
+    color: white;
+  }
+
+  .modal-content input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .modal-content button {
+    width: 100%;
+      
+    
+    
+    
+    padding: 10px;
+    background-color: #16f590;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #000000;
+  }
+
+  .modal-content .switch-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .modal-content .switch-link a {
+    color: #b299ff;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .form {
+    display: none;
+    justify-content: center;
+  }
+
+  .form.active {
+    display: block;
+    
+  }
+
+
+.count { 
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        padding: 70px;
+    }
+
+.box { 
+    text-align: center; 
+    background: #0f492c; 
+    padding: 15px; 
+    border-radius: 10px; 
+    width: 130px;
+    
+}
+.count h3 { font-size: 24px; margin: 10px 0; }
+p { font-size: 18px; color: gray; }
+i { font-size: 40px; color: #00ff88; }
+
+
+
+
+.count .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap:2rem;
+    align-items: flex-start;
+    
+
+}
+
+.count .box-container .box{
+    margin-top: 40px;
+    margin-left: 20px;
+    
+    width: 250px;
+    height: 100px;
+    
+    border-radius: .5rem;
+    padding: 0.1rem;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.count .box-container .box i{
+    font-size: 3rem;
+    color: #00E77F;
+}
+
+.count .box-container .box h3{
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.1rem;
+}
+
+.count .box-container .box p{
+    font-size: 1.6rem;
+    color: rgb(88, 87, 84);
+
+}
+
+.heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    
+
+}
+.heading{
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 3.5rem;
+    color: white;
+
+}
+.heading span {
+    color: #00E77F;
+}
+
+.courses .swiper-slide{
+    
+    text-align: center;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 6px;
+}
+.courses .swiper-slide .styled-line{
+    width: 80%;
+    
+    margin-left: 9px;
+    background-color: #ffffff;
+    margin: 0 auto; 
+}
+
+
+
+.courses .swiper-slide img{
+    width: 100%;
+    height: 240px;
+}
+.courses .swiper-slide .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: transparent;
+    color: white;
+  }
+  
+  /* Move left group slightly to the right */
+  .courses .swiper-slide .left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 30px;  /* <-- ADJUST THIS VALUE */
+  }
+  
+  /* Move right group slightly to the left */
+  .courses .swiper-slide .right {
+    margin-right: 30px; /* <-- ADJUST THIS VALUE */
+    background-color: #2ee45b;
+    padding: 4px 10px;
+    border-radius: 9px;
+    font-weight: bold;
+  }
+  .courses .swiper-slide .container .icon{
+    font-size: 18px;
+  }
+  
+
+.teachers .swiper-slide{
+    
+
+    position: relative;
+    text-align: center;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+
+.teachers .swiper-slide img{
+    width: 350px;
+    height: 430px;
+}
+.teachers .swiper-slide .share{
+    position: absolute;
+    top: 1rem;left: 2rem;
+}
+
+.teachers .swiper-slide h3{
+    color: #00E77F;
+}
+.teachers .swiper-slide  .share a{
+
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: -15px;
+    height: 2.3rem;
+    width: 2rem;
+    
+    line-height: 2.5rem;
+    border-radius: .5rem;
+    border-color: rgb(247, 23, 191);
+    background-color: #2c9b67;
+    color: rgb(6, 7, 7);
+    text-align: center;
+    font-size: 1rem;
+    
+    
+}
+
+.teachers .swiper-slide .share a:hover{
+    background-color: rgb(26, 252, 56);
+    color: white;
+    left: 2rem;
+    
+    
+}
+
+
+
+
+.student-reviews {
+    color: white;
+    padding: 20px;
+}
+
+.swiper-container2 {
+    width: 83%;
+    padding-bottom: 50px;
+}
+
+.review-card {
+    
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stars {
+    color: #28a745;
+    transform: scale(0.7);
+    margin-left: -28px;
+    margin-top: -18px;
+
+}
+
+/* Swiper Navigation and Pagination */
+.swiper-button-next, .swiper-button-prev {
+    color: white;
+}
+.swiper-pagination-bullet {
+    background: white;
+}
+.swiper-pagination {
+    display: none !important;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+.container .contactinfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+
+
+}
+.container .contactinfo .box2{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    cursor: pointer;
+}
+.container .contactinfo .box2 .icon2{
+    position: relative;
+    min-width: 50px;
+    height: 50px;
+    background: repeating-conic-gradient(from 27.5deg,#01dbc2 0%,#01dbc2 10%, transparent 10%,transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .contactinfo .box2 .icon2::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from 117.5deg,#01dbc2 0%,#01dbc2 10%, transparent 10%,transparent 50%);
+    
+    
+}
+.container .contactinfo .box2 .icon2::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #222;
+}
+.container .contactinfo .box2 .icon2 b{
+    position:absolute;
+    inset: 8px;
+    background: #23f0d8;
+    z-index: 2;
+}
+.container .contactinfo .box2 .icon2 i{
+    position: relative;
+    z-index: 800;
+    color: #333;
+    font-size: 1.25em;
+}
+.container .contactinfo .box2 .text2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 1.1em;
+    margin-top: -12px;
+    color: white;
+    font-family: 200;
+}
+.container .contactinfo .box2 .text2 h3{
+    font-weight: 500;
+    color: #01dbc2;
+}
+.container .contactinfo .box2 .text2 p{
+    margin-top: -12px;
+    color: white;
+}
+.container .contactinfo .txt{
+    color: #fff;
+    margin-top: 50px;
+    font-weight: 500;
+    border-left: 50px solid #1bd4ec;
+    padding-left: 10px;
+    line-height: 1em;
+
+
+}
+.container .contactinfo .sci{
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    
+
+
+}
+.container .contactinfo .sci li{
+    list-style: none;
+
+}
+.container .contactinfo .sci li a{
+    color: #fff;
+    font-size: 1.5em;
+
+    transition: 0.25s;
+
+}
+.container .contactinfo .sci li a:hover{
+    color: #e0840c;
+    filter: drop-shadow(0 0 5px #01dbc2);
+}
+.container .contactform{
+    position: relative;
+    width: 40%;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%,#01dbc2 10%, transparent 10%,transparent 50%);
+    animation: animate 6s linear infinite;
+    padding: 60px;
+    margin-right: 60px;
+    margin-bottom: 70px;
+
+    
+}
+.container .contactform::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a),#01dbc2 0%,#01dbc2 10%, transparent 10%,transparent 50%);
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+
+
+}
+.container .contactform::after{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 20px solid #222;
+    
+}
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+@keyframes animate{
+    0%
+    {
+        --a: 0deg;
+    }
+    100%
+    {
+        --a:360deg;
+    }
+}
+.container .contactform form{
+    position: relative;
+    z-index: 10;
+}
+.container .contactform form h2{
+    font-size: 2em;
+    color: #fff;
+    font-weight: 500;
+
+}
+.container .contactform form.inputbox{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+.container .contactform form .inputbox input,
+.container .contactform form .inputbox textarea{
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 1.1em;
+    margin: 10px 0;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #01dbc2;
+    color: #fff;
+    outline: none;
+    resize: none;
+}
+.container .contactform form .inputbox span{
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    padding: 5px 0;
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #fff;
+    transition: 0.5s;
+
+
+}
+.container .contactform form .inputbox input:focus ~ span,
+.container .contactform form .inputbox textarea:focus ~ span,
+.container .contactform form .inputbox input:valid ~ span,
+.container .contactform form .inputbox input:valid ~ span{
+    color: #01dbc2;
+    font-size: 0.9em;
+    transform: translateY(-24px);
+}
+.container .contactform form .inputbox input[type="submit"]{
+    width: 100%;
+    background: #01dbc2;
+    color: #222;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #4CAF50;
+        text-align: center;
+    }
+    .menu.show {
+        display: flex;
+    }
+    .menu-button {
+        display: block;
+    }
+}
