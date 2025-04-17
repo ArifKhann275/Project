@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cour1.css">
+    <link rel="stylesheet" href="courr.js">
+   
+</head>
+<body>
+    <div class="course-card">
+        <img src="Teacher 2.jpeg" alt="Course Image" class="course-image">
+        <div class="course-content">
+          <h2 class="course-title">From Zero to Hero with Nodejs</h2>
+          <div class="course-meta">
+            <span><strong>Teacher:</strong> Keny White</span>
+            <span><strong>Category:</strong> Technology</span>
+          </div>
+          <div class="course-review">
+            <span class="stars">★★★★★</span>
+            <span class="review-text">(1 Review)</span>
+          </div>
+          <div class="course-footer">
+            <span class="price">Free</span>
+            <button class="enroll-button">Take This Course</button>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="curriculum">
+
+        <!-- SECTION 1 -->
+        <div class="section">
+          <div class="section-header" onclick="toggleLectures(1)">
+            <span>SECTION 1: BASIC NODEJS</span>
+            <span class="section-status">1</span>
+          </div>
+          <div class="lectures" id="section-1">
+            <div class="lecture">
+              <span>Lecture 1.1</span>
+              <span onclick="toggleVideo()" style="cursor: pointer;">Node.js – Introduction</span>
+              
+              <div style="display: flex; gap: 40px; align-items: flex-start;">
+  
+                <!-- Your Existing Table (Left side) -->
+                <div>
+                  <!-- 🧠 Your course table goes here -->
+                  <!-- Keep this part unchanged -->
+                  <table>
+                    <!-- your course rows -->
+                  </table>
+                </div>
+              
+                <!-- Video Area (Right side) -->
+                <div>
+                  
+                  <div id="video-container" style="display: none; margin-top: 20px;">
+                    <iframe width="560" height="315"
+                      src="https://www.youtube.com/embed/TlB_eWDSMt4"
+                      title="Node.js Introduction"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              
+              </div>
+              
+              
+              
+              
+              
+              
+            </div>
+            <div class="lecture">
+              <span>Lecture 1.2</span>
+              <span>Node.js – Environment Setup</span>
+              <span class="view-icon">👁️</span>
+              <span>25 min</span>
+            </div>
+            <div class="lecture">
+              <span>Lecture 1.3</span>
+              <span>Node.js – Packaging</span>
+              <span class="view-icon">👁️</span>
+              <span>20 min</span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- SECTION 2 -->
+        <div class="section">
+          <div class="section-header" onclick="toggleLectures(2)">
+            <span>SECTION 2: ADVANCED NODEJS</span>
+            <span class="section-status">0</span>
+          </div>
+          <div class="lectures" id="section-2">
+            <div class="lecture">
+              <span>Lecture 2.1</span>
+              <span>Node.js – Utility Modules</span>
+              <span class="view-icon">👁️</span>
+              <span>20 min</span>
+            </div>
+            <div class="lecture">
+              <span>Lecture 2.2</span>
+              <span>Node.js – Web Module</span>
+              <span class="view-icon">👁️</span>
+              <span>30 min</span>
+            </div>
+            <div class="lecture">
+              <span>Lecture 2.3</span>
+              <span>Node.js – Express Framework</span>
+              <span class="view-icon">👁️</span>
+              <span>30 min</span>
+            </div>
+          </div>
+        </div>
+      
+        <!-- SECTION 3 -->
+        <div class="section">
+          <div class="section-header" onclick="toggleLectures(3)">
+            <span>SECTION 3: NODEJS PROJECTS</span>
+            <span class="section-status">0</span>
+          </div>
+          <div class="lectures" id="section-3">
+            <div class="lecture">
+              <span>Lecture 3.1</span>
+              <span>Node.js – REST API Project</span>
+              <span class="view-icon">👁️</span>
+              <span>40 min</span>
+            </div>
+            <div class="lecture">
+              <span>Lecture 3.2</span>
+              <span>Node.js – File Upload</span>
+              <span class="view-icon">👁️</span>
+              <span>25 min</span>
+            </div>
+            <div class="lecture">
+              <span>Lecture 3.3</span>
+              <span>Node.js – Authentication</span>
+              <span class="view-icon">👁️</span>
+              <span>35 min</span>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <script>
+        function toggleLectures(sectionNumber) {
+          const section = document.getElementById(`section-${sectionNumber}`);
+          if (section.style.display === "block") {
+            section.style.display = "none";
+          } else {
+            section.style.display = "block";
+          }
+        }
+      </script>
+
+
+<script>
+    let isVideoVisible = false;
+  
+    function toggleVideo() {
+      const videoContainer = document.getElementById("video-container");
+      const button = document.querySelector("button");
+  
+      if (isVideoVisible) {
+        videoContainer.style.display = "none";
+        button.textContent = "Show Video";
+      } else {
+        videoContainer.style.display = "block";
+        button.textContent = "Hide Video";
+      }
+  
+      isVideoVisible = !isVideoVisible;
+    }
+  </script>
+    
+    
+
+    
+
+
+
+  
+
+
+  
+      
+      
+      
+</body>
+</html>
